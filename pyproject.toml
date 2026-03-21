@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "geospatial-mcp-server"
+version = "0.1.0"
+description = "Geospatial MCP Server — Geocoding, POI-Suche, Routing und Gebietsstatistiken via OpenStreetMap fuer AI Agents"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "AiAgentKarl"}
+]
+keywords = ["mcp", "geospatial", "openstreetmap", "geocoding", "osm", "nominatim", "overpass", "ai-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: GIS",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "httpx>=0.27.0",
+    "pydantic>=2.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/AiAgentKarl/geospatial-mcp-server"
+Repository = "https://github.com/AiAgentKarl/geospatial-mcp-server"
+Issues = "https://github.com/AiAgentKarl/geospatial-mcp-server/issues"
+
+[project.scripts]
+geospatial-server = "src.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
